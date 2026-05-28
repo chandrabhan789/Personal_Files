@@ -1,0 +1,44 @@
+ @echo off
+ Echo "preparing for deleting of TEMP files and internet cache"
+ Echo "Calculating Settings..."
+
+ Echo .
+ Echo "Deleting Temporary Files from your profile..."
+ del "%userprofile%\Local Settings\Temp\*.*" /s /q /f
+ Echo %ERRORLEVEL%
+
+ Echo .
+ Echo "Deleting Temporary Internet Files from your profile..."
+ del "%userprofile%\Local Settings\Temporary Internet Files\*.*" /s /q /f
+ Echo %ERRORLEVEL%
+
+ Echo .
+ Echo "Deleting Temporary Files from your computers..."
+ del "C:\Windows\Temp\*.*" /s /q /f
+del /q/f/s %TEMP%\*
+ Echo %ERRORLEVEL%
+
+ Echo .
+ Echo "Deleting Cookies from your computers..."
+ del "%userprofile%\Cookies\*.*" /s /q /f
+ Echo %ERRORLEVEL%
+
+ Echo .
+ Echo "Deleting Recent Files from your computers..."
+ del "%userprofile%\Recent\*.*" /s /q /f
+ Echo %ERRORLEVEL%
+
+ Echo .
+ Echo "Deleting History from your Computers..."
+ del "%userprofile%\Local Settings\History\*.*" /s /q /f
+ Echo %ERRORLEVEL%
+
+ Echo .
+ Echo "Deleting Winzip Files..."
+ del C:\unzipped\*.* /s /q /f
+ Echo %ERRORLEVEL%
+
+
+ Echo Completed...  
+exit 
+
